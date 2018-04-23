@@ -1,0 +1,364 @@
+/*******
+Edited By: @zhouxiaoxing
+Edited Time: 2018-4-13
+Description: pop-up window style
+********/
+
+@import "common_config.less";
+/*************common style***************/
+//common layout and color
+@alert-content-width:700px;
+@alert-content-minHeight:100px;
+@alert-content-maxHeight:550px;
+@alert-header-height:45px;
+@alert-footer-height:50px;
+@alert-header-border:0px;
+@alert-header-bg-color: #2079da;//弹窗头部颜色  线条用：#2178da；全色用：#2e456d
+@alert-header-font-color: #3B3D40;//弹窗头部字体颜色
+@alert-body-subTitle-font-color: #3B3D40;//副标题字体颜色
+@alert-body-font-title-color: #A6A8AD;//弹窗内容标题字体颜色
+@alert-body-font-content-color: #3B3D40;//弹窗内容字体颜色
+@alert-body-font-content-error: red;//弹窗内容提示信息字体颜色
+@alert-body-border-color: #d0d6df;//弹窗内容边框颜色
+//font size
+@alert-header-font-size: 16px;//弹窗头部字体大小
+@alert-body-subTitle-font-size: 14px;//弹窗头部字体大小
+@alert-body-font-title-size: 12px;//弹窗内容标题字体大小
+@alert-body-font-content-size: 14px;//弹窗内容字体大小
+//input height
+@alert-body-input-height:30px;
+
+@rowHeight:60px;
+.alert_box{
+  div{
+    box-sizing: border-box;
+  }
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  z-index:300;
+  //animation delay, ross-browser
+  animation: delayWin .1s;
+  -moz-animation: delayWin .1s; /* Firefox */
+  -webkit-animation: delayWin .1s;  /* Safari and Chrome */
+  -o-animation: delayWin .1s;   /* Opera */
+  //mask
+  .mask{
+    width:100%;
+    height:100%;
+    background:#000;
+    position:fixed;
+    top:0;left:0;
+    opacity:0.4;
+  }
+  //window size control
+  .content{
+    word-break: break-all;
+    background: #fff;
+    position:absolute;
+    min-height: @alert-content-minHeight;
+    max-height: @alert-content-maxHeight;
+    width:@alert-content-width;
+    //header
+    .content-header{
+      text-indent:1em;
+      width:100%;
+      height:@alert-header-height;
+      line-height:@alert-header-height - @alert-header-border;
+      text-align: left;
+      font-style:normal;
+      position: relative;
+      background-color: #fff;
+      border-bottom:1px solid @alert-body-border-color;
+      .handerTile {
+        font-size: @alert-header-font-size;
+        color: @alert-header-font-color;
+      }
+      //close button
+      .closePopup{
+        position: absolute;
+        display: block;
+        width: 50px;
+        cursor: pointer;
+        z-index: 301;
+        right: 0;
+        top: 0px;
+        padding-right: 15px;
+        color:@alert-header-font-color;
+        i{
+          font-size: 12px;
+        }
+      }
+    }
+    //content
+    .content-body{
+      width:100%;
+      max-height:@alert-content-maxHeight - @alert-header-height - @alert-footer-height;
+      min-height:@alert-content-minHeight - @alert-header-height - @alert-footer-height;
+      overflow-y: auto;
+      overflow-x: hidden;
+      text-align: left;
+      box-sizing:border-box;
+      padding:20px 40px;
+      .content-body-title{
+        display:flex;
+        align-items:center;
+        height:16px;
+        .subTitleLine{
+          border-left:4px solid  @alert-header-bg-color;
+          height:100%
+        }
+        .subTitleText{
+          margin-left: 10px;
+          font-size: @alert-body-subTitle-font-size;
+          font-weight: bold;
+          color: @alert-body-subTitle-font-color;
+        }
+      }
+      .content-body-table{
+        margin: 10px auto 15px;
+        .table-row{
+          display: -webkit-flex;
+          display: flex;
+          min-height: @rowHeight;
+          border: 1px solid @alert-body-border-color;
+          border-bottom: 0;
+          &:last-child{
+            border-bottom: 1px solid @alert-body-border-color;
+          }
+          .table-col{
+            flex: 1;
+            border-right: 1px solid @alert-body-border-color;
+            padding:10px 10px;
+            position: relative;
+            box-sizing: border-box;
+            &:last-child{
+              border-right: 0;
+            }
+            .redPoint {
+              font-size:12px;
+              display: inline-block;
+              position: relative;
+              &:after {
+                content: "*";
+                color: red;
+                position: absolute;
+                right: -10px;
+                top: 1px;
+                font-size: 20px;
+              }
+            }
+            span {
+              &.redPonit {
+                font-size:12px;
+                display: inline-block;
+                position: relative;
+                &:after {
+                  content: "*";
+                  color: red;
+                  position: absolute;
+                  right: -10px;
+                  top: 1px;
+                  font-size: 20px;
+                }
+              }
+            }
+            &>div{
+              font-size: @alert-body-font-content-size;
+              color:@alert-body-font-content-color;
+              &:nth-child(1){
+                font-size: @alert-body-font-title-size;
+                color:@alert-body-font-title-color;
+                height: 20px;
+              }
+              &.input-box,&.inputBox{
+                  background: none!important;
+                box-sizing: border-box;
+                width:100%;
+                .el-input,.el-select,.el-textarea {
+                  width:100%;
+                  textarea {
+                    overflow: hidden!important;
+                  }
+                }
+              }
+              &.inputPosition{
+                  position:relative;
+                  .eye{
+                      display: block;
+                      position:absolute;
+                      right:15px;
+                      top:5px;
+                      width:25px;
+                      height:20px;
+                      cursor:pointer;
+                  }
+              }
+              &.error{
+                bottom:2px;
+                left:0px;
+                font-size: @alert-body-font-title-size;
+                color:red;
+                //height: 16px;
+                padding: 0 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    //footer
+    .content-footer {
+      height: @alert-footer-height;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      border-top:1px solid @alert-body-border-color;
+      .btnBox{
+        padding:10px 0px;
+      }
+    }
+  }
+  &.alert_normal{
+    .content{
+      .content-body{
+
+      }
+    }
+  }
+  //cancel commit
+  &.no_submit{
+    .content{
+      .content-header{
+        height: 7%;
+      }
+      .content-body{
+        height:93%;
+      }
+      .content-footer {
+        height: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+  &.alert_setColumn{
+    .content{
+      width:50%;
+      height:30%;
+      min-height: 300px;
+      .content-header{
+        height: 18%;
+      }
+      .content-body{
+        height:64%;
+      }
+      .content-footer {
+        height: 18%;
+      }
+    }
+  }
+
+  &.alert_table{
+    .content{
+      width:70%;
+      height:70%;
+    }
+  }
+  //checkbox
+  &.alert_checkbox{
+    .content{
+      width:40%;
+    }
+  }
+
+
+  &.alert_top2{
+    z-index: 400;
+  }
+}
+
+@media screen and(-ms-high-contrast:active),(-ms-high-contrast:none){
+  .alert_box{
+    .content{
+      top:18%;
+      left:30%;
+    }
+    &.alert_setColumn{
+      .content{
+        top:33%;
+        left:25%;
+      }
+    }
+
+    &.alert_table{
+      .content{
+        left:15%;
+      }
+    }
+
+    &.alert_checkbox{
+      .content{
+        left:32%;
+      }
+    }
+
+  }
+  .alert_box.sm_alert{
+
+    .content{
+      top:30%;
+      left:30%;
+    }
+
+    &.alert_setColumn{
+      .content{
+        top:33%;
+        left:25%;
+      }
+    }
+
+    &.alert_table{
+      .content{
+        left:15%;
+      }
+    }
+
+    &.alert_checkbox{
+      .content{
+        left:32%;
+      }
+    }
+
+  }
+}
+
+//animation delay, ross-browser
+@keyframes delayWin
+{
+  0% {width: 99.99%;opacity:0}
+  100% {width: 100%;opacity:1}
+}
+@-moz-keyframes delayWin /* Firefox */
+{
+  0% {width: 99.99%;opacity:0}
+  100% {width: 100%;opacity:1}
+}
+@-webkit-keyframes delayWin /* Safari 和 Chrome */
+{
+  0% {width: 99.99%;opacity:0}
+  100% {width: 100%;opacity:1}
+}
+@-o-keyframes delayWin /* Opera */
+{
+  0% {width: 99.99%;opacity:0}
+  100% {width: 100%;opacity:1}
+}

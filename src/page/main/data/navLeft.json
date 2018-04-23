@@ -1,0 +1,26 @@
+[{
+  "title": "DASHBOARD",
+  "active": true,
+  "nav_title": "title",
+  "router": "dashboard"
+},
+  {
+    "title": "MY CRUISE",
+    "active": false,
+    "nav_title": "title",
+    "router": "myCruise"
+  },
+  {
+    "title": "AGENTS",
+    "active": false,
+    "nav_title": "title",
+    "router": "agents",
+    "display": false
+  },
+  {
+    "title": "HELP",
+    "active": false,
+    "nav_title": "title",
+    "router": "help"
+  }
+]

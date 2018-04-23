@@ -1,0 +1,267 @@
+/*******
+Edited By: @zhouxiaoxing
+Edited Time: 2018-4-13
+Description: Main style
+********/
+
+body{
+  background:#FFF;
+}
+#main{
+  height: 100%;
+  width: 100%;
+  div{
+    float: left;
+  }
+}
+#header{
+  @bgStart: rgb(46,151,232);
+  @bgEnd: rgb(49,207,210);
+  @headerHeight: 6%;
+  @headerHeightDecimal: 0.10;
+  @start:#294968;
+  @center:#304b71;
+  @right:#2e446c;
+  @end:#132a4c;
+  height: @headerHeight;
+  min-height: @minHeight * @headerHeightDecimal;
+  max-height: @maxHeight * @headerHeightDecimal;
+  width: 100%;
+  opacity: 1;
+  position: relative;
+  z-index: 200!important;
+  background:#fff;
+  div{
+    float:left;
+  }
+  .header-right{
+      width:88%;
+      height:100%;
+      padding:0 0 0 0;
+      background: #272c32;;
+      position:relative;
+      img{
+          position:absolute;
+          bottom:0;
+          left:0;
+          width:100%;
+      }
+      .user-name{
+          width:250px;
+          height:84%;
+          position:absolute;
+          right:0;
+          top:0;
+          div{
+              height:100%;
+          }
+          .name{
+              line-height: 60px;
+              text-align: right;
+              font-size:13px;
+              width:61%;
+              color:#009EFA;
+
+            .account{
+              text-decoration: underline;
+            }
+          }
+          .Introduction{
+              width:30%;
+              position:relative;
+              height:100%;
+              .icon{
+                  width:40%;
+                  height:30%;
+                  position:absolute;
+                  left: 30px;
+                  top:20px;
+                  background:url('../../assets/main/icon_nav_exit2.png')no-repeat;
+                  background-size:75% 100%;
+                  cursor: pointer;
+                   &:hover{
+                    background:url('../../assets/main/icon_nav_exit2.png')no-repeat;
+                    background-size:75% 100%;
+                  }
+              }
+          }
+      }
+  }
+ .logo{
+    @logoWidth: 12%;
+    @logoWidthDecimal: 0.12;
+    width: @logoWidth;
+    min-width: @minWidth * @logoWidthDecimal;
+    max-width: @maxWidth * @logoWidthDecimal;
+    height: 100%;
+    vertical-align: middle;
+    background: #272c32;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    .logo-img{
+        color:#fff;
+        font-size:13px;
+        font-weight: 600;
+      width: 100%;
+      height: 55%;
+      margin-top: 5px;
+      margin-left: -5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width:100%;
+        height:auto;
+      }
+    }
+  }
+}
+#left{
+  @leftWidth: 12%;
+  @leftWidthDecimal: 0.12;
+  @start:#2a4a69;
+  @end:#828992;
+  width: @leftWidth;
+  min-width: @minWidth * @leftWidthDecimal;
+  max-width: @maxWidth * @leftWidthDecimal;
+  height: 94%;
+  text-align: left;
+  overflow-x: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #272c32;;
+  .left-nav{
+    width:96%;
+  }
+  .left_title{
+    width:100%;
+    height:20%;
+  }
+  .nav_title{
+    width: 100%;
+    height: 43px;
+    display: block;
+    float: left;
+    position:relative;
+  }
+  .title{
+      width:100%;
+      height:100%;
+      text-align: center;
+      line-height: 43px;
+      font-size:14px;
+      position:relative;
+      color: darkgrey;
+  }
+  .icon{
+    display: block;
+    width: 25px;
+    height: 20px;
+    position:absolute;
+    left:6%;
+    top:24%;
+    background: url('../../assets/main/nav_icon.png');
+  }
+  .dashboard{
+      .icon{
+        background-position: 140px 0px;
+      }
+      &.active{
+        .icon{
+          background-position: 140px -22px;
+        }
+      }
+  }
+  .myCruise{
+      .icon{
+        background-position: 43px 0px;
+      }
+      &.active{
+        .icon{
+          background-position: 43px -22px;
+        }
+      }
+  }
+  .agents{
+      .icon{
+        background-position: 90px 0px;
+      }
+      &.active{
+        .icon{
+          background-position: 90px -22px;
+        }
+      }
+  }
+
+  .help{
+    .icon{
+      background-position: 115px 0px;
+    }
+    &.active{
+      .icon{
+        background-position: 115px -22px;
+      }
+    }
+  }
+  .active{
+    font-size:16px;
+    color:#009efa;
+  }
+  .nav_title b{
+      width:2px;
+      height:43px;
+      background: #009efa;
+      position:absolute;
+      left:0;
+      top:0;
+      display: none;
+  }
+  .nav_title b.leftBar{
+      display: block;
+  }
+  .left-nav .el-collapse{
+    width:100%;
+  }
+  .el-collapse-item__wrap .linkStyle{/*a标签大小*/
+    position:relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+  }
+  .left-nav .el-collapse-item__content a{
+      color:#687484;
+  }
+  .left-nav .el-collapse-item__content a:hover{
+      font-size:15px;
+      color:#fff;
+  }
+  .el-collapse-item__wrap .aColor .text{
+    font-size:15px;
+    color:#fff;
+  }
+}
+#right{
+  @rightWidth: 88%;
+  @rightWidthDecimal: 0.88;
+  width: @rightWidth;
+  min-width: @minWidth * @rightWidthDecimal;
+  max-width: @maxWidth * @rightWidthDecimal;
+  height:94%;
+
+  padding:0 0 0 0;
+  .contain{
+      width:100%;
+      height:96%;
+      background: #fff;
+  }
+}
+::-webkit-scrollbar{width:8px;height: 8px;}
+::-webkit-scrollbar-thumb{background-color:#263a56; border-radius: 10px;}

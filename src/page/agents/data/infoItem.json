@@ -1,0 +1,34 @@
+[
+  {
+  "id":100,
+  "doamin": "bjstdmngbgr02.throughtworks.com",
+  "serverAddress": "|idle|192.168.1.2|/var/lib/cruise-agent",
+  "class": "infoItem",
+  "status": "deny",
+  "browsers": ["ubuntu", "firefox3", "core-duo"]
+},
+  {
+    "id":101,
+    "doamin": "bjstdmngbgr03.throughtworks.com",
+    "serverAddress": "|building|192.168.1.3|/var/lib/cruise-agent",
+    "class": "infoItem",
+    "status": "agree",
+    "browsers": ["ubuntu", "firefox3", "mysql", "core-duo"]
+  },
+  {
+    "id":102,
+    "doamin": "bjstdmngbgr04.throughtworks.com",
+    "serverAddress": "|building|192.168.1.4|/var/lib/cruise-agent",
+    "class": "infoItem",
+    "status": "agree",
+    "browsers": ["ubuntu", "firefox3", "core-duo"]
+  },
+  {
+    "id":103,
+    "doamin": "bjstdmngbgr05.throughtworks.com",
+    "serverAddress": "|idle|192.168.1.5|/var/lib/cruise-agent",
+    "class": "infoItem",
+    "status": "deny",
+    "browsers": ["ubuntu"]
+  }
+]

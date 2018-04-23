@@ -1,0 +1,144 @@
+/*******
+Edited By: @zhouxiaoxing
+Edited Time: 2018-4-13
+Description: Agents style
+********/
+
+.agentsHeader {
+  width: 100%;
+  height: 10%;
+  background-color: grey;
+}
+
+.agents {
+  width: 8%;
+  height: 80%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.normal {
+  width: 8%;
+  height: 60%;
+  float: left;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: darkgrey;
+  text-align: center;
+  margin-top: 0.7%;
+  margin-right: 2%;
+}
+
+.active{
+  background: lightgrey;
+}
+
+.normal span {
+  color: black;
+}
+
+.agentsContent {
+  width: 100%;
+  height: 100%;
+}
+
+.infoLayout {
+  width: 69.55%;
+  height: 90%;
+  float: left;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+
+.summaryLayout {
+  width: 30%;
+  height: 90%;
+  float: right;
+  border-right: 2px solid grey;
+  border-bottom: 2px solid grey;
+
+  .summary,.history{
+    width: 90%;
+    margin: 4% auto;
+  }
+
+  .summaryItem{
+    margin: 0 0 0 12px;
+
+    td{
+      height: 30px;
+      width: 120px;
+    }
+  }
+
+  .historyItem{
+    margin: 12px;
+  }
+
+  .underLine{
+    height:1px;
+    border:none;
+    border-top:2px solid grey
+  }
+}
+
+.deny{
+  background-color: azure;
+}
+
+.agree{
+  background-color: cornsilk;
+}
+
+.infoItem {
+  width: 80%;
+  height: 12%;
+  margin: 20px auto;
+  border: 2px solid grey;
+  border-radius: 5px;
+
+  .infoItemLeft{
+    width: 14%;
+    height: 100%;
+    float: left;
+
+    .circle{
+      width:50px;
+      height:50px;
+      background-color:darkgrey;
+      border-radius:25px;
+      margin: 9px auto;
+      border: 2px solid grey;
+    }
+  }
+
+  .infoItemRight{
+    width: 86%;
+    height: 100%;
+    float: left;
+
+    .infomation{
+      margin: 2% auto;
+
+      .infomationUrl{
+        margin-right: 20px;
+        font-weight: bold;
+      }
+
+      .resources{
+        text-decoration: underline;
+      }
+    }
+
+    .browsers{
+      margin: 0 7px 0 0;
+    }
+  }
+}
